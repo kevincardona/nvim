@@ -9,6 +9,8 @@ require("lazy").setup({
     'tpope/vim-surround',
     -- identify the indentation of a file
     'tpope/vim-sleuth',
+    -- quick change from snake_case to camelCase and vise versa
+    'tpope/vim-abolish',
     -- naturally switch between vim and tmux panes
     'christoomey/vim-tmux-navigator',
     -- smooth scrolling

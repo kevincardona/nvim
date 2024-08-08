@@ -7,12 +7,17 @@ vim.g.vscode = true
 dofile(vim.fn.stdpath('config') .. '/init.lua')
 
 -- keyboard shortcuts specific for vscode nvim
+local function map_vscode_command(key, command, options)
+  vim.keymap.set('n', key, string.format('<Cmd>lua require("vscode").call("%s")<CR>', command), options)
+end
+
+local opts = { noremap = true, silent = true }
+
 vim.keymap.del('n', '<leader>e')
-vim.keymap.set('n', '<leader>e', '<Cmd>lua require("vscode").call("workbench.action.toggleSidebarVisibility")<CR>', { noremap = true, silent = true })
-
 vim.keymap.del('n', '<leader>bo')
-vim.keymap.set('n', '<leader>bo', '<Cmd>lua require("vscode").call("workbench.action.closeOtherEditors")<CR>', { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>gu', '<Cmd>lua require("vscode").call("editor.action.referenceSearch.trigger")<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', 'gu', '<Cmd>lua require("vscode").call("editor.action.referenceSearch.trigger")<CR>', { noremap = true, silent = true })
+map_vscode_command('<leader>e', 'workbench.action.toggleSidebarVisibility', opts)
+map_vscode_command('<leader>bo', 'workbench.action.closeOtherEditors', opts)
+map_vscode_command('<leader>gu', 'editor.action.referenceSearch.trigger', opts)
+map_vscode_command('gu', 'editor.action.referenceSearch.trigger', opts)
 
