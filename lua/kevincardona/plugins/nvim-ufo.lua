@@ -30,3 +30,4 @@ return {
         vim.keymap.set('n', '<leader>fh', toggle_fold_column)
     end
 }
+
