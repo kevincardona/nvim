@@ -22,9 +22,7 @@ return {
 
         -- Key mappings for buffer navigation
         vim.keymap.set('n', '<leader>k', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
-        vim.keymap.set('n', '<leader>l', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>j', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
-        vim.keymap.set('n', '<leader>h', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>bo', ':BufferLineCloseOthers<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>bl', ':BufferLineCloseLeft<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>br', ':BufferLineCloseRight<CR>', { noremap = true, silent = true })

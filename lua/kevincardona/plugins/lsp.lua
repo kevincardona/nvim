@@ -17,8 +17,25 @@ return {
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
             "j-hui/fidget.nvim",
+            {
+                "windwp/nvim-ts-autotag",
+                config = function()
+                    -- nvim-ts-autotag setup with custom configuration
+                    require('nvim-ts-autotag').setup({
+                        opts = {
+                            enable_close = true,          -- Auto close tags
+                            enable_rename = true,         -- Auto rename pairs of tags
+                            enable_close_on_slash = false -- Do not auto close on trailing </
+                        },
+                        per_filetype = {
+                            ["html"] = {
+                                enable_close = false -- Disable auto-closing for HTML
+                            }
+                        }
+                    })
+                end
+            }
         },
-
         config = function()
             local lspconfig = require("lspconfig")
             local cmp = require('cmp')
@@ -48,7 +65,19 @@ return {
                                 "solargraph",
                                 "stdio"
                             },
-                            capabilities = capabilities,
+                            -- capabilities = capabilities,
+                            settings = {
+                                solargraph = {
+                                    autoformat = false,
+                                    formatting = false,
+                                    completion = true,
+                                    diagnostic = true,
+                                    folding = true,
+                                    references = true,
+                                    rename = true,
+                                    symbols = true
+                                }
+                            }
                             -- You might need to customize the command path if solargraph is not found
                             -- cmd = { "path/to/your/asdf/ruby/bin/solargraph", "stdio" },
                         }
@@ -92,7 +121,7 @@ return {
             vim.diagnostic.config({
                 -- update_in_insert = true,
                 float = {
-                    focusable = false,
+                    focusable = true,
                     style = "minimal",
                     border = "rounded",
                     source = "always",

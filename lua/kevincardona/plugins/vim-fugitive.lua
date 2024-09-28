@@ -12,6 +12,19 @@ return {
         vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
         vim.keymap.set("n", "<leader>gb", ":GBrowse<CR>");
 
+        local function last_commit_on_line()
+            local line_number = vim.fn.line('.')
+            local file_path = vim.fn.expand('%')
+            local handle = io.popen('git blame -L ' ..
+            line_number .. ',' .. line_number .. ' ' .. file_path .. ' | awk \'{print $1}\'')
+            local commit_hash = handle:read("*a")
+            handle:close()
+            commit_hash = vim.fn.trim(commit_hash)
+            vim.cmd('GBrowse ' .. commit_hash)
+        end
+
+        vim.keymap.set("n", "<leader>gl", last_commit_on_line, { desc = "Go to last commit on line" })
+
         local function open_merge_request()
             local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD"):gsub("\n", "")
             local repo = vim.fn.system("git config --get remote.origin.url"):gsub("\n", "")
