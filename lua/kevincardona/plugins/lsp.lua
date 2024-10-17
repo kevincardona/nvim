@@ -99,6 +99,7 @@ return {
                 }
             })
 
+            lspconfig.gdscript.setup(capabilities)
 
             cmp.setup({
                 snippet = {
