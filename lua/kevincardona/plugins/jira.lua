@@ -25,6 +25,6 @@ local function open_jira_ticket()
 end
 
 vim.api.nvim_create_user_command('OpenJiraTicket', open_jira_ticket, {})
-vim.api.nvim_set_keymap('n', '<leader>jo', '<cmd>OpenJiraTicket<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>oj', '<cmd>OpenJiraTicket<CR>', { noremap = true, silent = true })
 
 return {}

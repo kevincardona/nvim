@@ -22,6 +22,7 @@ require('kevincardona')
 vim.g.loaded_netrwPlugin = 1
 
 -- Basic settings
+vim.opt.relativenumber = true
 vim.opt.conceallevel = 0
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

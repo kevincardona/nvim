@@ -96,6 +96,15 @@ return {
                             }
                         }
                     end,
+
+                    ["tsserver"] = function()
+                        lspconfig.tsserver.setup {
+                            capabilities = capabilities,
+                            handlers = {
+                                ["textDocument/publishDiagnostics"] = function() end
+                            }
+                        }
+                    end,
                 }
             })
 
