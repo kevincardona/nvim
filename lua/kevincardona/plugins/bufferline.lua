@@ -25,6 +25,8 @@ return {
         vim.keymap.set('n', '<leader>j', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', 'L', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', 'H', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+        vim.keymap.set('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+        vim.keymap.set('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>bo', ':BufferLineCloseOthers<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>bl', ':BufferLineCloseLeft<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>br', ':BufferLineCloseRight<CR>', { noremap = true, silent = true })
