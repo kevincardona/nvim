@@ -3,6 +3,9 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("i", "jj", "<Esc>", opts)
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- buffer navigation
+vim.keymap.set('n', '<leader>bd', ':bd<CR>', opts)
+
 -- project navigation
 vim.keymap.set('n', '<leader>e', ":NvimTreeFindFileToggle!<CR>", opts)
 
