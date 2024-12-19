@@ -16,6 +16,14 @@ return {
                     icon = '▎',
                     style = 'icon',
                 },
+                diagnostics = "nvim_lsp",
+                offsets = {
+                    {
+                        filetype = "NvimTree",
+                        text = "File Explorer",
+                        text_align = "center"
+                    }
+                },
                 max_name_length = 24,
             }
         }
@@ -27,6 +35,7 @@ return {
         vim.keymap.set('n', 'H', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+        vim.keymap.set('n', '<leader>bp', ':BufferLineTogglePin<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>bo', ':BufferLineCloseOthers<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>bl', ':BufferLineCloseLeft<CR>', { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>br', ':BufferLineCloseRight<CR>', { noremap = true, silent = true })

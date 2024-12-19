@@ -6,6 +6,7 @@ return {
     config = function()
         require('onedark').setup {
             style = 'darker',     -- dark, darker, cool, deep, warm, warmer, light
+            -- transparent = true,
         }
         require('onedark').load()
     end,
