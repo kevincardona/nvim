@@ -21,7 +21,6 @@ end
 
 return {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.5",
     dependencies = {
         "nvim-lua/plenary.nvim",
         {
@@ -35,16 +34,6 @@ return {
 
         require('telescope').setup({
             defaults = {
-                layout_strategy = 'bottom_pane',
-                layout_config = {
-                    horizontal = {
-                        mirror = true,
-                        preview_width = 0.6,
-                    },
-                    width = 0.8,
-                    height = 0.7,
-                    prompt_position = "bottom",
-                },
                 mappings = {
                     i = {
                         ["<C-Down>"] = require('telescope.actions').cycle_history_next,
@@ -57,6 +46,7 @@ return {
                 prompt_prefix = '🔍'
             }
         })
+
         vim.keymap.set('n', '<leader>o', builtin.buffers, { desc = '[O]pen Buffers' })
         vim.keymap.set('n', '<leader>so', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
         vim.keymap.set('n', '<leader>sb', telescope_current_buffer_fuzzy_find, { desc = '[S]earch in Current [B]uffer' })
@@ -67,5 +57,10 @@ return {
         vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
         vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
         vim.keymap.set('n', '<leader>sg', telescope_live_grep_all, { desc = '[S]earch by [G]rep in All Folders' })
+
+        -- buffers
+        vim.keymap.set('n', '<leader>bb', builtin.buffers, { desc = '[B]uffers' })
+        vim.keymap.set('n', '<leader>hh', builtin.buffers, { desc = '[B]uffers' })
+        vim.keymap.set('n', '<leader>kj', builtin.buffers, { desc = '[B]uffers' })
     end
 }
