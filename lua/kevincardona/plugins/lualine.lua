@@ -15,6 +15,7 @@ return {
                 { 'filename', file_status = true, path = 1 },
             },
             lualine_x = {
+                'progress',
                 'location',
                 {
                     -- Custom function to list active LSPs

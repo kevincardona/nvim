@@ -13,7 +13,7 @@ require("lazy").setup({
     'tpope/vim-abolish',
     -- naturally switch between vim and tmux panes
     'christoomey/vim-tmux-navigator',
-    -- smooth scrolling
-    -- 'psliwka/vim-smoothie',
+    -- quickly change surrounding characters with cs
+    "tpope/vim-surround",
     { import = 'kevincardona.plugins' },
 })

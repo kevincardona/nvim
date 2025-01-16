@@ -1,3 +1,7 @@
+if vim.g.vscode then
+    return {}
+end
+
 return {
     -- GitHub Copilot
     'github/copilot.vim',
@@ -45,6 +49,17 @@ return {
                                 diagnostics = {
                                     globals = { "vim" },
                                 },
+                            },
+                        },
+                    })
+                end,
+                ["solargraph"] = function()
+                    require("lspconfig").solargraph.setup({
+                        capabilities = capabilities,
+                        settings = {
+                            solargraph = {
+                                diagnostics = true,
+                                completion = true,
                             },
                         },
                     })
