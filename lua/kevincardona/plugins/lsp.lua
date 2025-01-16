@@ -22,6 +22,8 @@ return {
             })
 
             -- Load Blink CMP LSP Capabilities
+            require("blink.cmp").disable_fuzzy = true
+
             local capabilities = require("blink.cmp").get_lsp_capabilities()
 
             -- Setup Fidget
