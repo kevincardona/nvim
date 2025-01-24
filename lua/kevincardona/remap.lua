@@ -3,6 +3,9 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("i", "jj", "<Esc>", opts)
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- Disable 'q:' by remapping it to a no-op
+vim.keymap.set('n', 'q:', '<Nop>', { noremap = true, silent = true })
+
 -- buffer navigation
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', opts)
 
