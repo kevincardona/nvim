@@ -11,10 +11,9 @@ return {
         "neovim/nvim-lspconfig",
         dependencies = {
             "saghen/blink.cmp",                  -- Completion framework
-            "williamboman/mason.nvim",           -- LSP/DAP Installer
-            "williamboman/mason-lspconfig.nvim", -- Mason LSP bridge
             "j-hui/fidget.nvim",                 -- Notifications and LSP Progress
-
+            { "mason-org/mason.nvim", version = "^1.0.0" },
+            { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
         },
         config = function()
             -- Setup Mason
@@ -24,6 +23,7 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = { "lua_ls", "ts_ls", "pyright" }, -- Add the LSPs you need
             })
+
 
             -- Load Blink CMP LSP Capabilities
             require("blink.cmp").disable_fuzzy = true
